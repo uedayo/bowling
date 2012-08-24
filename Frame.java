@@ -9,4 +9,8 @@ public class Frame {
   public void add(int pins) {
     itsScore += pins;
   }
+
+  public void add(int pins) {
+    itsScore += pins;
+  }
 }
