@@ -1,5 +1,10 @@
-public class Frame{
-  public int getScore(){
-    return 0;
+public class Frame {
+  private int itsScore = 0;
+  public int getScore() {
+    return itsScore;
+  }
+
+  public void add(int pins) {
+    itsScore += pins;
   }
 }
