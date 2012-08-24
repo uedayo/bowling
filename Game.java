@@ -1,8 +1,8 @@
-public class Frame {
+public class Game {
 
   private int itsScore = 0;
 
-  public int getScore() {
+  public int score() {
     return itsScore;
   }
 
