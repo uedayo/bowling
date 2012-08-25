@@ -16,9 +16,13 @@ public class Game {
   public int scoreForFrame(int theFrame){
     int ball = 0;
     int score = 0;
+
     for (int currentFrame = 0; currentFrame < theFrame; currentFrame++){
-      score += itsThrows[ball++] + itsThrows[ball++];
+      int firstThrow = itsThrow[ball++];
+      int secondThrow = itsThrow[ball++];
+      score += firstThrow + secondThrow;
     }
+
     return score;
   }
 }
