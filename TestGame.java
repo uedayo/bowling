@@ -12,12 +12,6 @@ public class TestGame extends TestCase {
     g = new Game();
   }
 
-//  public void testOneThrow() {
-//    g.add(5);
-//    assertEquals(5, g.score());
-//    assertEquals(1, g.getCurrentFrame());
-//  }
-
   public void testTwoThrowsNoMark() {
     g.add(5);
     g.add(4);
@@ -53,5 +47,22 @@ public class TestGame extends TestCase {
     assertEquals(18, g.scoreForFrame(2));
     assertEquals(18, g.score());
     assertEquals(3, g.getCurrentFrame());
+  }
+
+  public void testSimpleStrike() {
+    g.add(10);
+    g.add(3);
+    g.add(6);
+    assertEquals(19, g.scoreForFrame(1));
+    assertEquals(28, g.score());
+    assertEquals(3, g.getCurrentFrame());
+  }
+
+  public void testParfectGame() {
+    for(int i = 0; i < 12; i++) {
+      g.add(10);
+    }
+    assertEquals(300, g.score());
+    assertEquals(11, g.getCurrentFrame());
   }
 }
