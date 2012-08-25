@@ -37,8 +37,6 @@ public class Game {
     int score = 0;
 
     for (int currentFrame = 0; currentFrame < theFrame; currentFrame++) {
-      firstThrow = itsThrows[ball];
-
       if ( strike() ) {
         ball++;
         score += 10 + nextTwoBalls();
@@ -60,9 +58,6 @@ public class Game {
 
   public int handleSecondThrow() {
     int score = 0;
-    secondThrow = itsThrows[ball + 1];
-    
-    int frameScore = firstThrow + secondThrow;
 
     if ( spare() ) {
       ball += 2;
@@ -87,8 +82,6 @@ public class Game {
   }
 
   private int ball;
-  private int firstThrow;
-  private int secondThrow;
 
   public int getCurrentFrame() {
     return itsCurrentFrame;
