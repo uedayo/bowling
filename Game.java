@@ -18,8 +18,8 @@ public class Game {
     int score = 0;
 
     for (int currentFrame = 0; currentFrame < theFrame; currentFrame++){
-      int firstThrow = itsThrow[ball++];
-      int secondThrow = itsThrow[ball++];
+      int firstThrow = itsThrows[ball++];
+      int secondThrow = itsThrows[ball++];
       score += firstThrow + secondThrow;
     }
 
