@@ -15,12 +15,14 @@ public class TestGame extends TestCase {
   public void testOneThrow() {
     g.add(5);
     assertEquals(5, g.score());
+    assertEquals(1, g.getCurrentFrame());
   }
 
   public void testTwoThrowsNoMark() {
     g.add(5);
     g.add(4);
     assertEquals(9, g.score());
+    assertEquals(1, g.getCurrentFrame());
   }
 
   public void testFourThrowsNoMark() {
@@ -31,6 +33,7 @@ public class TestGame extends TestCase {
     assertEquals(18, g.score());
     assertEquals(9, g.scoreForFrame(1));
     assertEquals(18, g.scoreForFrame(2));
+    assertEquals(2, g.getCurrentFrame());
   }
 
   public void testSimpleSpare() {
