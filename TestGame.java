@@ -39,4 +39,13 @@ public class TestGame extends TestCase {
     g.add(3);
     assertEquals(13, g.scoreForFrame(1));
   }
+
+  public void testSimpleFrameAfterSpare() {
+    g.add(3);
+    g.add(7);
+    g.add(3);
+    g.add(2);
+    assertEquals(13, g.scoreForFrame(1));
+    assertEquals(18, g.scoreForFrame(2));
+  }
 }
