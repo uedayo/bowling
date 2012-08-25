@@ -13,11 +13,11 @@ public class Game {
     itsScore += pins;
   }
 
-  public int scoreForFrame(int frame){
+  public int scoreForFrame(int theFrame){
+    int ball = 0;
     int score = 0;
-    for (int ball = 0; frame > 0 && (ball < itsCurrentThrow);
-         ball +=2, frame--){
-      score += itsThrows[ball] + itsThrows[ball+1];
+    for (int currentFrame = 0; currentFrame < theFrame; currentFrame++){
+      score += itsThrows[ball++] + itsThrows[ball++];
     }
     return score;
   }
