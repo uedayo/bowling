@@ -7,7 +7,7 @@ public class Game {
   private boolean firstThrow = true;
 
   public int score() {
-    return itsScore;
+    return scoreForFrame(getCurrentFrame() - 1);
   }
 
   public void add(int pins) {
