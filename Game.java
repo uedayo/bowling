@@ -5,7 +5,7 @@ public class Game {
   private Scorer itsScorer = new Scorer();
 
   public int score() {
-    return scoreForFrame(getCurrentFrame() - 1);
+    return scoreForFrame(itsCurrentFrame);
   }
 
   public int getCurrentFrame() {
@@ -19,10 +19,7 @@ public class Game {
 
   private void adjustCurrentFrame(int pins) {
     if (firstThrowInFrame == true) {
-      if (pins == 10) {
-        // Strike
-        advanceFrame();
-      } else {
+      if ( adjustFrameForStrike(pins) == false) {
         firstThrowInFrame = false;
       }
     } else {
@@ -30,9 +27,19 @@ public class Game {
       advanceFrame();
     }
   }
+  
+  private boolean adjustFrameForStrike(int pins) {
+    if (pins == 10) {
+      // Strike
+      advanceFrame();
+      return true;
+    }
+
+    return false;
+  }
 
   private void advanceFrame() {
-    itsCurrentFrame = Math.min(11, itsCurrentFrame + 1);
+    itsCurrentFrame = Math.min(10, itsCurrentFrame + 1);
   }
 
   public int scoreForFrame(int theFrame){
