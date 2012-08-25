@@ -65,4 +65,15 @@ public class TestGame extends TestCase {
     assertEquals(300, g.score());
     assertEquals(11, g.getCurrentFrame());
   }
+
+  public void testEndOfArray() {
+    for (int i = 0; i < 9; i++) {
+      g.add(0);
+      g.add(0);
+    }
+    g.add(2);
+    g.add(8);
+    g.add(10);
+    assertEquals(20, g.score());
+  }
 }
